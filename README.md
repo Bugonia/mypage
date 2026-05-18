@@ -16,9 +16,13 @@ http://127.0.0.1:8765/
 
 ## Deployment
 
-Pushing to `main` runs the GitHub Pages workflow in `.github/workflows/pages.yml`.
+Publish this repository with GitHub Pages using:
 
-After the workflow finishes, the site is available at:
+- Source: `Deploy from a branch`
+- Branch: `main`
+- Folder: `/ (root)`
+
+After GitHub Pages finishes publishing, the site is available at:
 
 ```text
 https://bugonia.github.io/mypage/
