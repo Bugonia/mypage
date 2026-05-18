@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bugonia | Personal Homepage</title>
+    <meta
+      name="description"
+      content="Bugonia 的个人主页，整理项目、笔记和联系方式。"
+    >
+    <meta name="theme-color" content="#f5f1e8">
+    <meta property="og:title" content="Bugonia | Personal Homepage">
+    <meta
+      property="og:description"
+      content="Bugonia 的个人主页，整理项目、笔记和联系方式。"
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://bugonia.github.io/mypage/assets/hero-art.png">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header" data-elevated="false">
+      <a class="brand" href="#top" aria-label="Bugonia homepage">
+        <span class="brand-mark" aria-hidden="true">B</span>
+        <span>Bugonia</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">关于</a>
+        <a href="#work">项目</a>
+        <a href="#contact">联系</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="intro-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Personal homepage</p>
+          <h1 id="intro-title">Bugonia</h1>
+          <p class="lead">
+            我在这里整理自己的项目、想法和正在学习的东西。页面会随着新的作品慢慢长出来。
+          </p>
+          <div class="hero-actions" aria-label="Important links">
+            <a class="button primary" href="#work">看项目</a>
+            <a class="button secondary" href="https://github.com/Bugonia">GitHub</a>
+          </div>
+        </div>
+
+        <figure class="hero-visual" aria-label="Bugonia profile image">
+          <img src="assets/hero-art.png" alt="Bugonia 抽象封面图" width="720" height="720">
+          <figcaption>
+            <span class="caption-kicker">Online</span>
+            <span>Building, learning, shipping.</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="section about-section" id="about" aria-labelledby="about-title">
+        <div class="section-heading">
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">一个安静但持续更新的个人主页。</h2>
+        </div>
+
+        <div class="about-grid">
+          <article class="note-panel">
+            <h3>现在关注</h3>
+            <p>
+              Web、小工具、知识整理，以及把零散灵感变成可运行作品的过程。
+            </p>
+          </article>
+          <article class="note-panel accent-teal">
+            <h3>页面用途</h3>
+            <p>
+              这里会放项目入口、文章链接、实验记录，以及一个更容易被找到的联系位置。
+            </p>
+          </article>
+          <article class="note-panel accent-coral">
+            <h3>更新节奏</h3>
+            <p>
+              先上线，再迭代。好的主页不必一次写完，它可以跟着人一起变化。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section work-section" id="work" aria-labelledby="work-title">
+        <div class="section-heading">
+          <p class="eyebrow">Selected work</p>
+          <h2 id="work-title">可以逐步替换成真实作品的展示区。</h2>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-index">01</div>
+            <h3>Learning Notes</h3>
+            <p>
+              用来收集学习记录、读书笔记和技术摘录，让长期积累更容易被重新找到。
+            </p>
+            <a href="https://github.com/Bugonia">查看 GitHub -></a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-index">02</div>
+            <h3>Tiny Tools</h3>
+            <p>
+              存放一些轻量工具和网页实验，优先做得能用、清楚、方便继续改。
+            </p>
+            <a href="https://github.com/Bugonia">查看 GitHub -></a>
+          </article>
+
+          <article class="project-card">
+            <div class="project-index">03</div>
+            <h3>Writing</h3>
+            <p>
+              记录想法、项目复盘和阶段性总结，让作品之外也能留下清晰脉络。
+            </p>
+            <a href="https://github.com/Bugonia">查看 GitHub -></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-layout">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2 id="contact-title">想聊项目、想法，或者只是打个招呼。</h2>
+          </div>
+          <div class="contact-actions">
+            <a class="button primary" href="https://github.com/Bugonia">访问 GitHub</a>
+            <button class="button secondary" type="button" data-copy-url>
+              复制主页链接
+            </button>
+          </div>
+        </div>
+        <p class="copy-status" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© <span data-year></span> Bugonia</span>
+      <a href="#top">回到顶部</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

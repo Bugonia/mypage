@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Bugonia">
+  <rect width="64" height="64" rx="12" fill="#1e2523"/>
+  <path d="M20 14h16.5c6.7 0 11 3.6 11 9.3 0 3.5-1.8 6.1-5 7.4 4.1 1.1 6.5 4.1 6.5 8.4 0 6.7-4.9 10.9-12.7 10.9H20V14Zm15.7 14.1c3.7 0 6-1.7 6-4.6s-2.1-4.4-5.9-4.4h-9.7v9h9.6Zm.7 16.8c4.2 0 6.5-1.9 6.5-5.3 0-3.3-2.4-5.2-6.7-5.2H26.1v10.5h10.3Z" fill="#fffaf0"/>
+  <path d="M14 51h36" stroke="#d8a229" stroke-width="4" stroke-linecap="round"/>
+</svg>
