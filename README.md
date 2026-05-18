@@ -33,3 +33,4 @@ https://bugonia.github.io/mypage/
 - Edit `index.html` to change the text and links.
 - Edit `styles.css` to adjust the visual design.
 - Edit `script.js` for small browser interactions.
+- Contact email: `21-zxq@sjtu.edu.cn`.

@@ -404,6 +404,17 @@ figcaption {
   color: rgba(255, 250, 240, 0.74);
 }
 
+.contact-email {
+  margin: 22px 0 0;
+  color: rgba(255, 250, 240, 0.78);
+  font-size: clamp(1rem, 2vw, 1.18rem);
+}
+
+.contact-email a {
+  color: var(--paper-strong);
+  font-weight: 780;
+}
+
 .site-footer {
   justify-content: space-between;
   gap: 16px;
