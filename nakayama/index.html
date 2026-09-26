@@ -1,29 +1,33 @@
 <!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nakayama · 拟遗传全序研究台</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2728%27 fill=%27%23087f79%27/%3E%3Ctext x=%2732%27 y=%2742%27 text-anchor=%27middle%27 font-size=%2729%27 fill=%27white%27%3EN%3C/text%3E%3C/svg%3E"><link rel="stylesheet" href="style.css"></head>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Nakayama代数拟遗传序数计算器</title><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2728%27 fill=%27%23087f79%27/%3E%3Ctext x=%2732%27 y=%2742%27 text-anchor=%27middle%27 font-size=%2729%27 fill=%27white%27%3EN%3C/text%3E%3C/svg%3E"><link rel="stylesheet" href="style.css?v=20260926-academic"></head>
 <body><main class="shell">
-<header><div class="eyebrow">NAKAYAMA / COMBINATORIAL LAB</div><h1>从零关系，到拟遗传全序。</h1><p>用 X-set 迭代精确计数，用关系图观察约束。所有计数均针对<strong>全序</strong>，而非拟遗传结构。</p><div class="tags"><span>本地离线计算</span><span>BigInt 精确整数</span><span>directed + cyclic</span></div></header>
-<section class="workspace"><div class="panel input-panel"><div class="section-no">01 / ALGEBRA</div><h2>定义你的代数</h2><p class="muted">顶点依次定向：1 → 2 → ⋯ → n；循环型再接 n → 1。</p>
+<header>
+<div class="header-top"><div class="eyebrow">NAKAYAMA ALGEBRAS / q-ORDERINGS</div><nav class="language-nav" aria-label="语言"><a href="index.html" lang="zh-CN" aria-current="page">中文</a><a href="en.html" lang="en">English</a></nav></div>
+<h1>Nakayama代数拟遗传序数计算器</h1>
+<div class="definitions"><p><strong>Nakayama 代数</strong>是不可分解射影模和不可分解内射模均为单列模的有限维代数；单列模的子模按包含关系构成全序。本工具考虑代数闭域 K 上基本连通的 A = KQ/I，其中 Q 为线性定向或循环定向箭图，I 由容许的零关系生成。</p>
+<p>给定单模同构类的全序 ≼，令标准模 Δ(i) 为射影覆盖 P(i) 的最大商模，使其合成因子 S(j) 均满足 j ≼ i。当所有 Δ(i) 均为 Schur 模（End<sub>A</sub>Δ(i) ≅ K），且每个不可分解射影模均有标准模滤过时，称 ≼ 为<strong>拟遗传序</strong>。本工具计算这样的全序的数量 q(A)。</p></div>
+<p class="scope-note">计算方法：最小零关系判据与 X-set 迭代。整数和分数结果均为精确值；百分比为近似显示。所有计算在浏览器本地完成。</p>
+</header>
+<section class="workspace"><div class="panel input-panel"><div class="section-no">01 / 代数输入</div><h2>代数的表示</h2><p class="muted">顶点依次定向：1 → 2 → ⋯ → n；循环型再接 n → 1。</p>
 <div class="two-col"><label>顶点数 n<input id="nInput" type="number" min="1" max="200" value="7"></label><label>箭图类型<select id="kindInput"><option value="directed">线性定向 Aₙ</option><option value="cyclic">循环定向 cyclic</option></select></label></div>
 <label>输入方式<select id="modeInput"><option value="relations">零关系 [起点, 箭头数]</option><option value="kupisch">Kupisch 列 [c₁, …, cₙ]</option></select></label>
 <label id="inputLabel" for="algebraInput">零关系数组（第二项不是终点）</label><textarea id="algebraInput" rows="4" spellcheck="false">[[1,2],[3,2],[5,2]]</textarea>
 <p class="hint" id="inputHint">例：[3,2] 是路径 3 → 4 → 5 = 0。重复和冗余关系会自动去除。</p>
-<button class="primary" id="runButton">精确计算 <span>↗</span></button><button id="cancelButton" hidden>取消计算</button>
-<div class="presets"><span class="muted">试试这些配置</span><button data-preset="t2">T2 · 3 条关系</button><button data-preset="dense">紧邻三点关系</button><button data-preset="cyclic">循环型 · 跨越编号</button><button data-preset="zero">循环型 · q = 0</button><button data-preset="hereditary">无关系 · 遗传型</button></div>
+<button class="primary" id="runButton">精确计算</button><button id="cancelButton" hidden>取消计算</button>
+<div class="presets"><span class="muted">示例代数</span><button data-preset="t2">T2 · 3 条关系</button><button data-preset="dense">紧邻三点关系</button><button data-preset="cyclic">循环型 · 跨越编号</button><button data-preset="zero">循环型 · q = 0</button><button data-preset="hereditary">无关系 · 遗传型</button></div>
 <div class="note">计算有状态数与时间限制。达到限制时会明确停止，不会返回近似计数。n ≤ 200；性能主要取决于最小关系数。</div></div>
-<div class="panel result-panel" aria-live="polite"><div class="result-head"><div><div class="section-no">02 / EXACT COUNT</div><h2>计算结果</h2></div><button id="exportButton" disabled>导出 JSON ↓</button></div>
+<div class="panel result-panel" aria-live="polite"><div class="result-head"><div><div class="section-no">02 / 精确计数</div><h2>计算结果</h2></div><button id="exportButton" disabled>导出 JSON</button></div>
 <div id="error" class="error" hidden></div><div id="busy" class="note" hidden>正在后台进行关系子集递归…</div>
 <div id="resultContent" hidden><div class="hero-result"><div><div class="eyebrow">拟遗传全序数 q(A)</div><div id="qValue" class="big-number"></div></div><div class="ratio-box"><span>占全部 n! 全序</span><strong id="ratioValue"></strong><small id="percentValue"></small></div></div>
-<div class="microstats"><div><small>最小关系数</small><b id="mValue"></b></div><div><small>递归状态数</small><b id="statesValue"></b></div><div><small>计算耗时</small><b id="timeValue"></b></div></div><p class="hint" id="algorithmValue"></p><p class="hint" id="boundValue"></p>
+<div class="microstats"><div><small>最小关系数</small><b id="mValue"></b></div><div><small>递归状态数</small><b id="statesValue"></b></div><div><small>计算耗时</small><b id="timeValue"></b></div></div><p class="hint" id="algorithmValue"></p>
 <div id="warnings"></div><p class="sets" id="sets"></p><p class="muted mono" id="kupischValue"></p>
 <div class="diagram-wrap" id="algebraDiagram"></div><div class="legend"><span><i class="teal"></i>X：不属于任何关系的内部</span><span><i class="coral"></i>不能作全序最大元</span></div><div id="relationChips" class="relation-chips"></div><p class="hint" id="relationDetail">点击关系，查看其 hood 与内部顶点；循环路径保留重复出现的语义。</p>
 <details open><summary>按全序最大元分解</summary><p class="hint">X₀：不在任何 hood；Y：删除端点关系后仍有约束；Z：删除后约束为空。各行计数之和 = q(A)。</p><div class="table-scroll"><table><thead><tr><th>最大元</th><th>分支</th><th>删除关系</th><th>贡献</th></tr></thead><tbody id="branchRows"></tbody></table></div></details>
-<details><summary>一个拟遗传全序 & 自定义检验</summary><p class="hint">从大到小排列顶点，以逗号分隔。判据：每条最小关系的 hood 最大元不能在内部。</p><textarea id="orderInput" rows="2"></textarea><button id="checkButton">检验这个全序</button><p id="orderResult"></p></details>
+<details><summary>拟遗传序的构造与检验</summary><p class="hint">从大到小排列顶点，以逗号分隔。判据：每条最小关系的 hood 最大元不能在内部。</p><textarea id="orderInput" rows="2"></textarea><button id="checkButton">检验这个全序</button><p id="orderResult"></p></details>
 </div></div></section>
-<section class="panel t2-panel"><div class="section-no">03 / T2 EXPLORER</div><div class="t2-head"><div><h2>相邻关系只共享端点。</h2><p class="muted">gᵢ = (2i−1 → 2i → 2i+1)，i = 1,…,m；额外顶点只自由插入。</p></div><label>关系数 m<input id="t2M" type="number" min="1" max="30" value="3"></label><button id="loadT2">将 T2 载入计算器 ↑</button></div>
+<section class="panel t2-panel"><div class="section-no">03 / T2 计数示例</div><div class="t2-head"><div><h2>T2 型关系配置</h2><p class="muted">gᵢ = (2i−1 → 2i → 2i+1)，i = 1,…,m；额外顶点只自由插入。</p></div><label>关系数 m<input id="t2M" type="number" min="1" max="30" value="3"></label><button id="loadT2">载入 T2 配置</button></div>
 <div class="t2-grid"><div><div class="formula">(2m+1)pₘ = 2pₘ₋₁ + ∑<sub>i=1,…,m−1</sub> pᵢ₋₁ pₘ₋ᵢ₋₁</div><p class="hint">p₀ = 1，Qₘ = (2m+1)! pₘ。总顶点数 n ≥ 2m+1 时，q(T2(n,m)) = n! pₘ。</p><div class="t2-metrics"><div><small>精确概率 pₘ</small><strong id="t2P"></strong></div><div><small>最小顶点数 2m+1</small><strong id="t2N"></strong></div><div class="span2"><small>支撑上的精确计数 Qₘ</small><strong id="t2Q"></strong></div></div></div><div><div id="t2Chart"></div><p class="hint">横轴：关系数 m；纵轴：满足约束的全序比例 pₘ（不是序数 Qₘ）。</p></div></div>
-<div class="proof-status"><span class="pill">新证明草稿</span> 对任意 m 和任意 n，directed 情形的 T2 全局上界已给出最大元归纳证明；等号仅为 T2。<br><span class="pill amber">审阅提示</span> 此为新研究结果，须由作者独立核对并在对外使用前同行审查；不宣称逐对局部移动在任意背景下都单调。cyclic 的固定 m 极值不在此定理范围。</div></section>
-<section class="panel comparison-panel"><div class="section-no">04 / RELATION GEOMETRY</div><h2>固定两条关系的长度，比较摆放方式。</h2><p class="muted">保持各关系的 hood 长度 a、b 不变，对比至少两点交叠、完全分离、仅端点相接。比较的是 q(A)/n!；三种代数也可载入上方计算器验证。</p>
-<div class="compare-controls"><label>第一条 hood 长度 a<input id="lengthA" type="number" min="3" max="40" value="3"></label><label>第二条 hood 长度 b<input id="lengthB" type="number" min="3" max="40" value="3"></label><label>交叠的起点偏移 d<input id="offsetD" type="number" min="1" value="1"></label></div>
-<p class="hint" id="compareHint"></p><div id="pairChart" class="pair-chart"></div><p class="hint">严格比较只对两条关系成立；多关系的总体极值使用报告中的最大元归纳证明，不依赖未经证明的逐对移动。</p></section>
-<footer><span>依据投稿论文的最小关系判据与 X-set 迭代公式 · 2026-09-26</span><span>关系输入 → 最小化 → 精确递归 → 最大元分支</span></footer>
-</main><script src="core.js"></script><script src="app.js"></script></body></html>
+</section>
+
+<footer><span>Nakayama 代数 · 拟遗传序的精确计数</span><span>零关系输入采用 [起点, 箭头数] 约定</span></footer>
+</main><script src="core.js?v=20260926-academic"></script><script src="i18n.js?v=20260926-academic"></script><script src="app.js?v=20260926-academic"></script></body></html>
