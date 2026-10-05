@@ -6,146 +6,161 @@
     <title>Bugonia | Personal Homepage</title>
     <meta
       name="description"
-      content="Bugonia 的个人主页，整理项目、笔记和联系方式。"
+      content="Bugonia 的个人主页，整理研究论文、项目和联系方式。"
     >
     <meta name="theme-color" content="#f5f1e8">
     <meta property="og:title" content="Bugonia | Personal Homepage">
     <meta
       property="og:description"
-      content="Bugonia 的个人主页，整理项目、笔记和联系方式。"
+      content="Bugonia 的个人主页，整理研究论文、项目和联系方式。"
     >
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://bugonia.github.io/mypage/assets/hero-art.png">
+    <meta property="og:image" content="https://bugonia.github.io/mypage/assets/github-avatar.jpg">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <header class="site-header" data-elevated="false">
-      <a class="brand" href="#top" aria-label="Bugonia homepage">
-        <span class="brand-mark" aria-hidden="true">B</span>
-        <span>Bugonia</span>
-      </a>
-
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#about">关于</a>
-        <a href="#work">项目</a>
-        <a href="#contact">联系</a>
-      </nav>
-    </header>
-
-    <main id="top">
-      <section class="hero" aria-labelledby="intro-title">
-        <div class="hero-copy">
-          <p class="eyebrow">Personal homepage</p>
-          <h1 id="intro-title">Bugonia</h1>
-          <p class="lead">
-            我在这里整理自己的项目、想法和正在学习的东西。页面会随着新的作品慢慢长出来。
-          </p>
-          <div class="hero-actions" aria-label="Important links">
-            <a class="button primary" href="#work">看项目</a>
-            <a class="button secondary" href="https://github.com/Bugonia">GitHub</a>
+    <div class="page">
+      <header class="site-header">
+        <a class="brand" href="#about">Bugonia<span class="brand-dot">.</span></a>
+        <div class="header-actions">
+          <nav aria-label="主页导航" data-i18n-aria-label="navigation">
+            <a href="#about" data-i18n="navAbout">简介</a>
+            <a href="#publications" data-i18n="navPapers">论文</a>
+            <a href="#recognition" data-i18n="navRecognition">奖励与资助</a>
+            <a href="#links" data-i18n="navLinks">推荐</a>
+          </nav>
+          <div class="language-switch" role="group" aria-label="语言选择" data-i18n-aria-label="languageSelector">
+            <button type="button" data-language="zh" aria-pressed="true">中</button>
+            <span aria-hidden="true">/</span>
+            <button type="button" data-language="en" aria-pressed="false">EN</button>
           </div>
         </div>
-
-        <figure class="hero-visual" aria-label="Bugonia profile image">
-          <img src="assets/hero-art.png" alt="Bugonia 抽象封面图" width="720" height="720">
-          <figcaption>
-            <span class="caption-kicker">Online</span>
-            <span>Building, learning, shipping.</span>
-          </figcaption>
-        </figure>
-      </section>
-
-      <section class="section about-section" id="about" aria-labelledby="about-title">
-        <div class="section-heading">
-          <p class="eyebrow">About</p>
-          <h2 id="about-title">一个安静但持续更新的个人主页。</h2>
-        </div>
-
-        <div class="about-grid">
-          <article class="note-panel">
-            <h3>现在关注</h3>
-            <p>
-              Web、小工具、知识整理，以及把零散灵感变成可运行作品的过程。
-            </p>
-          </article>
-          <article class="note-panel accent-teal">
-            <h3>页面用途</h3>
-            <p>
-              这里会放项目入口、文章链接、实验记录，以及一个更容易被找到的联系位置。
-            </p>
-          </article>
-          <article class="note-panel accent-coral">
-            <h3>更新节奏</h3>
-            <p>
-              先上线，再迭代。好的主页不必一次写完，它可以跟着人一起变化。
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section work-section" id="work" aria-labelledby="work-title">
-        <div class="section-heading">
-          <p class="eyebrow">Selected work</p>
-          <h2 id="work-title">可以逐步替换成真实作品的展示区。</h2>
-        </div>
-
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="project-index">01</div>
-            <h3>Learning Notes</h3>
-            <p>
-              用来收集学习记录、读书笔记和技术摘录，让长期积累更容易被重新找到。
-            </p>
-            <a href="https://github.com/Bugonia">查看 GitHub -></a>
-          </article>
-
-          <article class="project-card">
-            <div class="project-index">02</div>
-            <h3>Tiny Tools</h3>
-            <p>
-              存放一些轻量工具和网页实验，优先做得能用、清楚、方便继续改。
-            </p>
-            <a href="https://github.com/Bugonia">查看 GitHub -></a>
-          </article>
-
-          <article class="project-card">
-            <div class="project-index">03</div>
-            <h3>Writing</h3>
-            <p>
-              记录想法、项目复盘和阶段性总结，让作品之外也能留下清晰脉络。
-            </p>
-            <a href="https://github.com/Bugonia">查看 GitHub -></a>
-          </article>
-        </div>
-      </section>
-
-      <section class="section contact-section" id="contact" aria-labelledby="contact-title">
-        <div class="contact-layout">
-          <div>
-            <p class="eyebrow">Contact</p>
-            <h2 id="contact-title">想聊项目、想法，或者只是打个招呼。</h2>
-            <p class="contact-email">
+      </header>
+      <main>
+        <section class="profile" id="about" aria-labelledby="intro-title">
+          <img class="avatar" src="assets/github-avatar.jpg" alt="Bugonia 的 GitHub 头像" data-i18n-alt="avatarAlt" width="400" height="400">
+          <div class="profile-copy">
+            <h1 id="intro-title"><span class="person-name" data-i18n="displayName">仲笑秋</span><span> / Bugonia</span></h1>
+            <div class="profile-links">
               <a href="mailto:21-zxq@sjtu.edu.cn">21-zxq@sjtu.edu.cn</a>
-            </p>
+              <a href="https://github.com/Bugonia">GitHub ↗</a>
+            </div>
           </div>
-          <div class="contact-actions">
-            <a class="button primary" href="mailto:21-zxq@sjtu.edu.cn">发送邮件</a>
-            <a class="button secondary" href="https://github.com/Bugonia">访问 GitHub</a>
-            <button class="button secondary" type="button" data-copy-url>
-              复制主页链接
-            </button>
+        </section>
+      <section class="section publications-section" id="publications" aria-labelledby="publications-title">
+        <div class="section-heading">
+          <p class="eyebrow">Research</p>
+          <h2 id="publications-title">paper <span class="count">04</span></h2>
+          <div class="sort-controls" role="group" aria-label="论文排序" data-i18n-aria-label="paperSortLabel">
+            <button type="button" data-sort-target="publications" data-sort-mode="default" aria-pressed="true" data-i18n="sortByYear">年份</button>
+            <button type="button" data-sort-target="publications" data-sort-mode="popular" aria-pressed="false" data-i18n="sortPopular">热门</button>
           </div>
         </div>
-        <p class="copy-status" role="status" aria-live="polite"></p>
+
+        <div class="publication-list">
+          <article class="publication" data-popularity-key="paper-quantum-neural-operators">
+            <div class="publication-meta"><time datetime="2026-09-03">2026</time></div>
+            <h3 lang="en"><a href="https://www.nature.com/articles/s42256-026-01289-7" data-goatcounter-click="paper-quantum-neural-operators" data-goatcounter-title="Quantum neural operators">Quantum neural operators with implicit quadratic frame and expressivity advantages</a></h3>
+            <p class="publication-authors" lang="en">Ruocheng Wang<sup>*</sup>, <strong>Xiaoqiu Zhong<sup>*</sup></strong>, Zhuo Xia, Junchi Yan<sup>†</sup></p>
+            <p class="publication-note">Nature Machine Intelligence · 2026</p>
+          </article>
+
+          <article class="publication" data-popularity-key="paper-quasi-hereditary-orderings">
+            <div class="publication-meta"><time datetime="2026">2026</time></div>
+            <h3 lang="en"><a href="https://doi.org/10.1007/s40840-026-02198-z" data-goatcounter-click="paper-quasi-hereditary-orderings" data-goatcounter-title="Quasi-Hereditary Orderings">Quasi-Hereditary Orderings of Nakayama Algebras</a></h3>
+            <p class="publication-authors" lang="en">Yuehui Zhang<sup>‡</sup>, <strong>Xiaoqiu Zhong<sup>‡†</sup></strong></p>
+            <p class="publication-note">Bulletin of the Malaysian Mathematical Sciences Society · 2026</p>
+            <a class="publication-resource" href="https://bugonia.github.io/mypage/nakayama/" data-i18n="interactiveTool" data-goatcounter-click="tool-nakayama" data-goatcounter-title="Nakayama interactive tool">小程序 ↗</a>
+          </article>
+
+          <article class="publication" data-popularity-key="paper-quantum-inspired-high-order-product">
+            <div class="publication-meta"><time datetime="2025">2025</time></div>
+            <h3 lang="en"><a href="https://dl.acm.org/doi/10.1145/3711896.3737008" data-goatcounter-click="paper-quantum-inspired-high-order-product" data-goatcounter-title="Quantum-inspired High-order Product">Reinvent the Operation not the Architecture: Quantum-inspired High-order Product for Compatible and Improved LLMs Training</a></h3>
+            <p class="publication-authors" lang="en">Hao Xiong<sup>*</sup>, Yebin Yang<sup>*</sup>, Huaijin Wu, <strong>Xiaoqiu Zhong</strong>, Yehui Tang, Zhuo Xia, Xiaoxing Wang, Junchi Yan<sup>†</sup></p>
+            <p class="publication-note">KDD 2025 · pp. 3356–3365</p>
+          </article>
+
+          <article class="publication" data-popularity-key="paper-tensor-network-survey">
+            <div class="publication-meta"><time datetime="2025">2025</time></div>
+            <h3 lang="en"><a href="https://www.ijcai.org/proceedings/2025/1194" data-goatcounter-click="paper-tensor-network-survey" data-goatcounter-title="Tensor Network survey">Tensor Network: from the Perspective of AI4Science and Science4AI</a></h3>
+            <p class="publication-authors" lang="en">Junchi Yan<sup>†</sup>, Yehui Tang, Xinyu Ye, Hao Xiong, <strong>Xiaoqiu Zhong</strong>, Yuhan Wang, Yuan Qi</p>
+            <p class="publication-note">IJCAI 2025 · Survey Track · pp. 10761–10769</p>
+          </article>
+
+        </div>
+        <p class="author-legend"><span data-i18n="equalContribution">* 共同第一作者</span><span data-i18n="correspondingAuthor">† 通讯作者</span><span data-i18n="alphabeticalOrder">‡ 作者按姓名字母顺序排列</span></p>
       </section>
-    </main>
 
-    <footer class="site-footer">
-      <span>© <span data-year></span> Bugonia</span>
-      <a href="#top">回到顶部</a>
-    </footer>
+        <section class="recognition-section" id="recognition" aria-labelledby="recognition-title">
+          <div class="section-heading">
+            <h2 id="recognition-title" data-i18n="recognitionTitle">奖励与资助</h2>
+          </div>
+          <div class="recognition-group" aria-labelledby="awards-title">
+            <h3 id="awards-title" data-i18n="awardsTitle">奖励</h3>
+            <ul class="recognition-items">
+              <li><span data-i18n="wuScholarship">吴文俊奖学金</span> <a class="institution-link" href="https://math.sjtu.edu.cn/" data-i18n="sjtuMath">上海交通大学数学科学学院 ↗</a></li>
+              <li><span data-i18n="weichaiScholarship">潍柴动力奖学金</span> <a class="institution-link" href="https://www.weichaipower.com/about/profile/" data-i18n="weichaiPower">潍柴动力股份有限公司 ↗</a></li>
+              <li><span data-i18n="tungScholarship">董氏奖学金</span> <span class="institution-name" data-i18n="tungFoundation">香港董氏慈善基金会</span></li>
+            </ul>
+          </div>
+          <div class="recognition-group" aria-labelledby="funding-title">
+            <h3 id="funding-title" data-i18n="fundingTitle">资助</h3>
+            <ul class="recognition-items">
+              <li><span data-i18n="nsfcProject">国家自然科学基金青年学生基础研究项目</span> <span class="grant-number" data-i18n="grantNumber">批准号：123B026</span> <span class="recognition-period" data-i18n="grantPeriod">执行期：2023–2025</span> <a class="institution-link" href="https://www.nsfc.gov.cn/" data-i18n="nsfc">国家自然科学基金委员会 ↗</a></li>
+            </ul>
+          </div>
+        </section>
 
+        <section class="links-section" id="links" aria-labelledby="links-title">
+          <div class="section-heading">
+            <h2 id="links-title">links <span class="count">03</span></h2>
+            <div class="sort-controls" role="group" aria-label="推荐链接排序" data-i18n-aria-label="linksSortLabel">
+              <button type="button" data-sort-target="links" data-sort-mode="default" aria-pressed="true" data-i18n="sortDefault">默认</button>
+              <button type="button" data-sort-target="links" data-sort-mode="popular" aria-pressed="false" data-i18n="sortPopular">热门</button>
+            </div>
+          </div>
+          <div class="recommended-links">
+            <a class="recommended-link" href="https://terrytao.wordpress.com/" data-popularity-key="link-terence-tao" data-goatcounter-click="link-terence-tao" data-goatcounter-title="Terence Tao: What's new">
+              <span class="link-name">What's new</span>
+              <span class="link-domain">terrytao.wordpress.com ↗</span>
+            </a>
+            <a class="recommended-link" href="https://spaces.ac.cn/" data-popularity-key="link-scientific-spaces" data-goatcounter-click="link-scientific-spaces" data-goatcounter-title="Scientific Spaces">
+              <span class="link-name">科学空间 <small>Scientific Spaces</small></span>
+              <span class="link-domain">spaces.ac.cn ↗</span>
+            </a>
+            <a class="recommended-link" href="https://mp.weixin.qq.com/s/r4-6MXLPCIsWJ4OaBObxyA" data-popularity-key="link-zartbot" data-goatcounter-click="link-zartbot" data-goatcounter-title="zartbot">
+              <span class="link-name">zartbot <small data-i18n="wechatLabel">微信公众号</small></span>
+              <span class="link-domain">mp.weixin.qq.com ↗</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="visitors-section" id="visitors" aria-labelledby="visitors-title">
+          <div class="section-heading visitors-heading">
+            <div>
+              <p class="eyebrow">Around the world</p>
+              <h2 id="visitors-title" data-i18n="visitorsTitle">访客地图</h2>
+            </div>
+            <p class="visitors-description" data-i18n="visitorsDescription">最近访问主页的地区分布</p>
+          </div>
+          <div class="visitor-map-frame">
+            <iframe
+              src="https://bugonia.goatcounter.com/?hideui=1"
+              title="主页访客地区分布"
+              data-i18n-title="visitorMapTitle"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+            ></iframe>
+          </div>
+        </section>
+      </main>
+      <footer class="site-footer">
+        <span>© <span data-year></span> <span data-i18n="displayName">仲笑秋</span></span>
+        <a href="https://github.com/Bugonia">GitHub ↗</a>
+      </footer>
+    </div>
+    <script data-goatcounter="https://bugonia.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
